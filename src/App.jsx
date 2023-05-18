@@ -8,14 +8,15 @@ import Error from "./pages/Error"
 // creating a parent route to wrap children routes
 const myRouters = createBrowserRouter([
 	{
-		path: "/",
+		path: "/base",
 		element: <Root />,
 		errorElement: <Error />,
+		// remove to forward slash '/' to convert to dynamic path
 		children: [
-			{ path: "/", element: <Home /> },
-			{ path: "/products", element: <Products /> },
+			{ path: "", element: <Home /> },
+			{ path: "products", element: <Products /> },
 			// dynamic path routing
-			{ path: "/products/:productId", element: <ProductDetail /> },
+			{ path: "products/:productId", element: <ProductDetail /> },
 		],
 	},
 ])

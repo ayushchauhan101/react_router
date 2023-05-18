@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import GoBack from "./GoBack"
 
 const ProductsList = [
 	{ id: "p1", title: "Product1" },
@@ -13,10 +14,11 @@ function Products() {
 			<ul>
 				{ProductsList.map((product) => (
 					<li key={product.id}>
-						<Link to={`/products/${product.id}`}>{product.title}</Link>
+						<Link to={product.id}>{product.title}</Link>
 					</li>
 				))}
 			</ul>
+			<GoBack />
 		</>
 	)
 }
